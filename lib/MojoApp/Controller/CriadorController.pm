@@ -1,6 +1,6 @@
-package MojoApp::Controller::EstadoUsuario;
+package MojoApp::Controller::CriadorController;
 use Mojo::Base 'Mojolicious::Controller';
-use MojoApp::Model::EstadoUsuarios;
+use MojoApp::Model::Criador;
 use JSON;
 use JSON::XS 'decode_json';
 use Data::Dumper;
@@ -10,11 +10,12 @@ use warnings;
 
 sub listar {
     my $self = shift;
-    my $model = 'MojoApp::Model::EstadoUsuarios';
-    my $items= $model->new();
-    my @rpta = $items->listar();
+    my $model = 'MojoApp::Model::Criador';
+    my $criadores = $model->new();
+    my @rpta = $criadores->listar();
     my $json_text = to_json \@rpta;
 
     $self->render(text => ("$json_text"));
 }
+
 1;
