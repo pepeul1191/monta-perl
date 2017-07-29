@@ -1,6 +1,5 @@
 package MojoApp::Model::Criador;
 use MojoApp::Config::Database;
-use Data::Dumper;
 
 sub new {
     my $class = shift;
